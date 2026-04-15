@@ -12,6 +12,12 @@
               action="action_web_diagram_builder"
               sequence="10"/>
 
+    <menuitem id="menu_web_diagram_builder_import"
+              name="Import from CSV"
+              parent="menu_web_diagram_builder_root"
+              action="action_web_diagram_builder_import"
+              sequence="20"/>
+
     <menuitem id="menu_web_diagram_builder_config"
               name="Configuration"
               parent="menu_web_diagram_builder_root"

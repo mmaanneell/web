@@ -9,9 +9,9 @@
             <list string="Diagram Builders">
                 <field name="name"/>
                 <field name="model_id"/>
-                <field name="recursive_field_id"/>
-                <field name="node_count" string="# Nodes"/>
-                <field name="link_count" string="# Links"/>
+                <field name="recursive_field_id" string="Parent Field"/>
+                <field name="node_count" string="Node Count"/>
+                <field name="link_count" string="Link Count"/>
                 <field name="last_computed"/>
             </list>
         </field>
@@ -28,8 +28,19 @@
                             string="Compute Nodes &amp; Links"
                             type="object"
                             class="btn-primary"/>
+                    <button name="action_open_diagram"
+                            string="View Diagram"
+                            type="object"
+                            class="btn-secondary"
+                            invisible="not last_computed"/>
+                    <button name="action_export_csv"
+                            string="Export CSV"
+                            type="object"
+                            class="btn-secondary"
+                            invisible="not last_computed"/>
                     <field name="last_computed" widget="datetime" readonly="1"
                            string="Last computed:" invisible="not last_computed"/>
+                    <span class="text-muted" invisible="last_computed">Click "Compute Nodes &amp; Links" to generate the diagram.</span>
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -37,22 +48,31 @@
                         <h1>
                             <field name="name" placeholder="Diagram name…"/>
                         </h1>
+                        <field name="description" placeholder="Describe what this diagram represents…" nolabel="1"/>
                     </div>
+                    <p class="text-muted" style="font-size:0.9em;">
+                        <strong>How to use:</strong> Select a model and a parent field, then click
+                        <em>Compute Nodes &amp; Links</em>.
+                        The diagram will display the hierarchy between records linked by that field
+                        (e.g. model <em>Contact</em>, parent field <em>parent_id</em>).
+                    </p>
                     <group>
                         <group string="Data Source">
                             <field name="template_id"
                                    options="{'no_create': True}"
                                    placeholder="Select a template to auto-fill…"/>
-                            <field name="model_id"/>
+                            <field name="model_id" help="The model whose records will be displayed as nodes in the diagram."/>
                             <field name="model_name" invisible="1"/>
-                            <field name="recursive_field_id"/>
+                            <field name="recursive_field_id" string="Parent Field"
+                                   help="The field you select here determines who is the parent of who in the diagram. Each record will appear below the record pointed to by this field, connected by an arrow. Records with no value in this field will appear at the top."/>
                         </group>
                         <group string="Options">
                             <field name="filter_domain"
                                    widget="domain"
                                    options="{'model': 'model_name'}"
                                    invisible="not model_id"/>
-                            <field name="max_nodes"/>
+                            <field name="max_nodes" help="Maximum number of nodes to display. Increase if your diagram appears incomplete."/>
+                            <field name="auto_refresh" help="If enabled, the diagram is automatically recomputed every hour without any manual action."/>
                         </group>
                     </group>
                     <notebook>
@@ -60,17 +80,18 @@
                             <field name="node_ids" readonly="1">
                                 <list>
                                     <field name="name"/>
-                                    <field name="record_id"/>
-                                    <field name="flow_start"/>
+                                    <field name="record_id" string="Record"/>
+                                    <field name="flow_start" string="Root Node"
+                                           help="Root nodes have no parent and appear as starting points in the diagram."/>
                                 </list>
                             </field>
                         </page>
                         <page string="Links" name="links">
                             <field name="link_ids" readonly="1">
                                 <list>
-                                    <field name="source_node_id"/>
-                                    <field name="dest_node_id"/>
-                                    <field name="signal"/>
+                                    <field name="source_node_id" string="From"/>
+                                    <field name="dest_node_id" string="To"/>
+                                    <field name="signal" string="Label"/>
                                 </list>
                             </field>
                         </page>
@@ -92,6 +113,7 @@
                        source="source_node_id"
                        destination="dest_node_id"
                        label="['signal']"/>
+                <label string="Note: changes made directly in this diagram will be overwritten the next time 'Compute Nodes &amp; Links' is run."/>
             </diagram>
         </field>
     </record>

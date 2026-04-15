@@ -12,8 +12,9 @@
                         <field name="model_id"/>
                         <field name="recursive_field_id"/>
                     </group>
-                    <group string="Description">
-                        <field name="description" nolabel="1"/>
+                    <group>
+                        <field name="description"
+                               placeholder="Describe what this template is used for…"/>
                     </group>
                 </sheet>
             </form>

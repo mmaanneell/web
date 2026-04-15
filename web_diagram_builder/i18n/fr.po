@@ -1,0 +1,621 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * web_diagram_builder
+#
+# Translators:
+# TechnoLibre, 2024
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: TechnoLibre\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: web_diagram_builder
+#: model:ir.model,name:web_diagram_builder.model_web_diagram_builder
+msgid "Web Diagram Builder"
+msgstr "Constructeur de diagramme"
+
+#. module: web_diagram_builder
+#: model:ir.model,name:web_diagram_builder.model_web_diagram_builder_template
+msgid "Web Diagram Builder Template"
+msgstr "Modèle de diagramme"
+
+#. module: web_diagram_builder
+#: model:ir.model,name:web_diagram_builder.model_web_diagram_builder_node
+msgid "Web Diagram Builder Node"
+msgstr "Nœud du diagramme"
+
+#. module: web_diagram_builder
+#: model:ir.model,name:web_diagram_builder.model_web_diagram_builder_link
+msgid "Web Diagram Builder Link"
+msgstr "Lien du diagramme"
+
+#. module: web_diagram_builder
+#: model:ir.model,name:web_diagram_builder.model_web_diagram_builder_import
+msgid "Import Diagram Builder from CSV"
+msgstr "Importer un diagramme depuis CSV"
+
+#. module: web_diagram_builder
+#: model:ir.model,name:web_diagram_builder.model_web_diagram_builder_import_result
+msgid "Import Result"
+msgstr "Résultat de l'importation"
+
+#. module: web_diagram_builder
+#: model:ir.model,name:web_diagram_builder.model_web_diagram_builder_import_result_line
+msgid "Import Result Line"
+msgstr "Ligne du résultat"
+
+#. module: web_diagram_builder
+#: model:ir.model,name:web_diagram_builder.model_web_diagram_builder_import_report
+msgid "Import Report Download"
+msgstr "Télécharger le rapport d'importation"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__name
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_node__name
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_template__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__description
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_template__description
+msgid "Description"
+msgstr "Description"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__model_id
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_template__model_id
+msgid "Model"
+msgstr "Modèle"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,help:web_diagram_builder.field_web_diagram_builder__model_id
+msgid "The model whose records will be displayed as nodes in the diagram."
+msgstr "Le modèle dont les enregistrements seront affichés comme nœuds dans le diagramme."
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__model_name
+msgid "Model Technical Name"
+msgstr "Nom technique du modèle"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__recursive_field_id
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_template__recursive_field_id
+msgid "Recursive Field"
+msgstr "Champ récursif"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,help:web_diagram_builder.field_web_diagram_builder__recursive_field_id
+msgid ""
+"Many2one field on the model that points back to the same model. Used to "
+"traverse the dependency chain."
+msgstr ""
+"Champ Many2one du modèle qui pointe vers le même modèle. Utilisé pour "
+"parcourir la chaîne de dépendances."
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,help:web_diagram_builder.field_web_diagram_builder_template__recursive_field_id
+msgid ""
+"Many2one field on the model that points back to the same model (e.g. "
+"parent_id on res.partner)."
+msgstr ""
+"Champ Many2one du modèle qui pointe vers le même modèle (ex. parent_id sur "
+"res.partner)."
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__filter_domain
+msgid "Filter Domain"
+msgstr "Domaine de filtrage"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,help:web_diagram_builder.field_web_diagram_builder__filter_domain
+msgid ""
+"Domain to select the initial set of records. Parents are automatically "
+"included to complete the chain."
+msgstr ""
+"Domaine pour sélectionner l'ensemble initial d'enregistrements. Les parents "
+"sont automatiquement inclus pour compléter la chaîne."
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__max_nodes
+msgid "Max Nodes"
+msgstr "Nombre maximum de nœuds"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,help:web_diagram_builder.field_web_diagram_builder__max_nodes
+msgid "Safety limit on the number of nodes. Traversal stops when this limit is reached."
+msgstr "Limite de sécurité sur le nombre de nœuds. Le parcours s'arrête lorsque cette limite est atteinte."
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__auto_refresh
+msgid "Auto-refresh"
+msgstr "Rafraîchissement automatique"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,help:web_diagram_builder.field_web_diagram_builder__auto_refresh
+msgid "If enabled, the diagram is automatically recomputed by the scheduled cron job."
+msgstr "Si activé, le diagramme est automatiquement recalculé par la tâche planifiée."
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__template_id
+msgid "Apply Template"
+msgstr "Appliquer un modèle"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,help:web_diagram_builder.field_web_diagram_builder__template_id
+msgid "Select a template to pre-fill Model and Recursive Field."
+msgstr "Sélectionnez un modèle pour préremplir le Modèle et le Champ récursif."
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__node_ids
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_node__outgoing_link_ids
+msgid "Nodes"
+msgstr "Nœuds"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__link_ids
+msgid "Links"
+msgstr "Liens"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__node_count
+msgid "Node Count"
+msgstr "Nombre de nœuds"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__link_count
+msgid "Link Count"
+msgstr "Nombre de liens"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder__last_computed
+msgid "Last Computed"
+msgstr "Dernier calcul"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_node__builder_id
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_link__builder_id
+msgid "Builder"
+msgstr "Constructeur"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_link__source_node_id
+msgid "Source"
+msgstr "Source"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_link__dest_node_id
+msgid "Destination"
+msgstr "Destination"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_link__signal
+msgid "Label"
+msgstr "Étiquette"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_node__record_id
+msgid "Record ID"
+msgstr "ID de l'enregistrement"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,help:web_diagram_builder.field_web_diagram_builder_node__record_id
+msgid "ID of the real record this node represents."
+msgstr "ID de l'enregistrement réel que ce nœud représente."
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_node__flow_start
+msgid "Flow Start"
+msgstr "Point de départ"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,help:web_diagram_builder.field_web_diagram_builder_node__flow_start
+msgid ""
+"Marks this as a root/starting node. The layout algorithm places flow_start "
+"nodes as sources."
+msgstr ""
+"Marque ce nœud comme racine/point de départ. L'algorithme de disposition "
+"place les nœuds flow_start comme sources."
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_node__outgoing_link_ids
+msgid "Outgoing Links"
+msgstr "Liens sortants"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_node__incoming_link_ids
+msgid "Incoming Links"
+msgstr "Liens entrants"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_ir_model__has_hierarchy
+msgid "Supports Hierarchy"
+msgstr "Supporte la hiérarchie"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,help:web_diagram_builder.field_ir_model__has_hierarchy
+msgid ""
+"True if the model has at least one many2one field pointing to itself, making "
+"it usable in the diagram builder."
+msgstr ""
+"Vrai si le modèle possède au moins un champ Many2one pointant vers lui-même, "
+"ce qui le rend utilisable dans le constructeur de diagramme."
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_import__file_ids
+msgid "CSV Files"
+msgstr "Fichiers CSV"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,help:web_diagram_builder.field_web_diagram_builder_import__file_ids
+msgid "Select one or more CSV files exported from Diagram Builder."
+msgstr "Sélectionnez un ou plusieurs fichiers CSV exportés depuis le constructeur de diagramme."
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_import_result__line_ids
+msgid "Results"
+msgstr "Résultats"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_import_result_line__file_name
+msgid "File"
+msgstr "Fichier"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_import_result_line__status
+msgid "Status"
+msgstr "Statut"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_import_result_line__builder_id
+msgid "Diagram Created"
+msgstr "Diagramme créé"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_import_result_line__error_message
+msgid "Error"
+msgstr "Erreur"
+
+#. module: web_diagram_builder
+#: model:ir.model.fields,field_description:web_diagram_builder.field_web_diagram_builder_import_report__file_format
+msgid "Format"
+msgstr "Format"
+
+#. module: web_diagram_builder
+#: model:ir.ui.menu,name:web_diagram_builder.menu_web_diagram_builder_root
+msgid "Diagram Builder"
+msgstr "Constructeur de diagramme"
+
+#. module: web_diagram_builder
+#: model:ir.ui.menu,name:web_diagram_builder.menu_web_diagram_builder_main
+msgid "Diagrams"
+msgstr "Diagrammes"
+
+#. module: web_diagram_builder
+#: model:ir.ui.menu,name:web_diagram_builder.menu_web_diagram_builder_import
+msgid "Import from CSV"
+msgstr "Importer depuis CSV"
+
+#. module: web_diagram_builder
+#: model:ir.ui.menu,name:web_diagram_builder.menu_web_diagram_builder_config
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: web_diagram_builder
+#: model:ir.ui.menu,name:web_diagram_builder.menu_web_diagram_builder_template
+msgid "Templates"
+msgstr "Modèles"
+
+#. module: web_diagram_builder
+#: model:ir.actions.act_window,name:web_diagram_builder.action_web_diagram_builder
+msgid "Diagram Builders"
+msgstr "Constructeurs de diagramme"
+
+#. module: web_diagram_builder
+#: model:ir.actions.act_window,name:web_diagram_builder.action_web_diagram_builder_template
+msgid "Diagram Templates"
+msgstr "Modèles de diagramme"
+
+#. module: web_diagram_builder
+#: model:ir.actions.act_window,name:web_diagram_builder.action_web_diagram_builder_import
+msgid "Import Diagram Builder"
+msgstr "Importer un diagramme"
+
+#. module: web_diagram_builder
+#: model:ir.cron,name:web_diagram_builder.ir_cron_compute_diagram_builders
+msgid "Web Diagram Builder: Refresh All"
+msgstr "Constructeur de diagramme : Rafraîchir tout"
+
+#. module: web_diagram_builder
+#: model:web.diagram.builder.template,name:web_diagram_builder.template_res_partner
+msgid "Partner Hierarchy"
+msgstr "Hiérarchie des partenaires"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_list
+msgid "Node Count"
+msgstr "Nombre de nœuds"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_list
+msgid "Link Count"
+msgstr "Nombre de liens"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "Compute Nodes & Links"
+msgstr "Calculer les nœuds et liens"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "View Diagram"
+msgstr "Voir le diagramme"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "Export CSV"
+msgstr "Exporter en CSV"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "Last computed:"
+msgstr "Dernier calcul :"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "Click \"Compute Nodes & Links\" to generate the diagram."
+msgstr "Cliquez sur « Calculer les nœuds et liens » pour générer le diagramme."
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "Data Source"
+msgstr "Source de données"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "Select a template to auto-fill…"
+msgstr "Sélectionnez un modèle pour remplir automatiquement…"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "Parent Field"
+msgstr "Champ parent"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "Options"
+msgstr "Options"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "Root Node"
+msgstr "Nœud racine"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "From"
+msgstr "De"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "To"
+msgstr "Vers"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "Dependency Diagram"
+msgstr "Diagramme de dépendances"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid ""
+"Note: changes made directly in this diagram will be overwritten the next "
+"time 'Compute Nodes & Links' is run."
+msgstr ""
+"Note : les modifications apportées directement dans ce diagramme seront "
+"écrasées lors du prochain lancement de « Calculer les nœuds et liens »."
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid ""
+"How to use: Select a model and a parent field, then click Compute Nodes & "
+"Links. The diagram will display the hierarchy between records linked by that "
+"field (e.g. model Contact, parent field parent_id)."
+msgstr ""
+"Comment utiliser : Sélectionnez un modèle et un champ parent, puis cliquez "
+"sur Calculer les nœuds et liens. Le diagramme affichera la hiérarchie entre "
+"les enregistrements liés par ce champ (ex. modèle Contact, champ parent "
+"parent_id)."
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid ""
+"The field you select here determines who is the parent of who in the "
+"diagram. Each record will appear below the record pointed to by this field, "
+"connected by an arrow. Records with no value in this field will appear at "
+"the top."
+msgstr ""
+"Le champ sélectionné ici détermine qui est le parent de qui dans le "
+"diagramme. Chaque enregistrement apparaîtra sous l'enregistrement vers "
+"lequel ce champ pointe, relié par une flèche. Les enregistrements sans "
+"valeur dans ce champ apparaîtront en haut."
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "Maximum number of nodes to display. Increase if your diagram appears incomplete."
+msgstr "Nombre maximum de nœuds à afficher. Augmentez si votre diagramme semble incomplet."
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid ""
+"If enabled, the diagram is automatically recomputed every hour without any "
+"manual action."
+msgstr ""
+"Si activé, le diagramme est automatiquement recalculé chaque heure sans "
+"aucune action manuelle."
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_form
+msgid "Root nodes have no parent and appear as starting points in the diagram."
+msgstr "Les nœuds racines n'ont pas de parent et apparaissent comme points de départ dans le diagramme."
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_node_form
+msgid "Open Record"
+msgstr "Ouvrir l'enregistrement"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_node_form
+msgid "Node"
+msgstr "Nœud"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_link_form
+msgid "Transition"
+msgstr "Transition"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_template_form
+msgid "Diagram Template"
+msgstr "Modèle de diagramme"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_template_form
+msgid "Describe what this template is used for…"
+msgstr "Décrivez à quoi sert ce modèle…"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_template_list
+msgid "Diagram Templates"
+msgstr "Modèles de diagramme"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_import_form
+msgid "Import Diagram Builder"
+msgstr "Importer un diagramme"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_import_form
+msgid ""
+"Upload one or more CSV files exported from Diagram Builder. Each diagram "
+"will be recreated and recomputed automatically. If a file fails, the others "
+"will still be imported."
+msgstr ""
+"Chargez un ou plusieurs fichiers CSV exportés depuis le constructeur de "
+"diagramme. Chaque diagramme sera recréé et recalculé automatiquement. Si un "
+"fichier échoue, les autres seront tout de même importés."
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_import_form
+msgid "Import"
+msgstr "Importer"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_import_form
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_import_report_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_import_result_form
+msgid "Import Results"
+msgstr "Résultats de l'importation"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_import_result_form
+msgid ""
+"Tip: Always export your CSV directly from the Diagram Builder form to ensure "
+"the file format is correct."
+msgstr ""
+"Conseil : Exportez toujours votre CSV directement depuis le formulaire du "
+"constructeur de diagramme pour garantir que le format du fichier est correct."
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_import_result_form
+msgid "Download Report"
+msgstr "Télécharger le rapport"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_import_result_form
+msgid "Go to Diagrams"
+msgstr "Aller aux diagrammes"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_import_result_form
+msgid "Close"
+msgstr "Fermer"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_import_report_form
+msgid "Download Report"
+msgstr "Télécharger le rapport"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_import_report_form
+msgid "Download"
+msgstr "Télécharger"
+
+#. module: web_diagram_builder
+#: code:addons/web_diagram_builder/models/web_diagram_builder_import.py:0
+#, python-format
+msgid "Missing fields: %s."
+msgstr "Champs manquants : %s."
+
+#. module: web_diagram_builder
+#: code:addons/web_diagram_builder/models/web_diagram_builder_import.py:0
+#, python-format
+msgid "Unknown fields in file: %s."
+msgstr "Champs inconnus dans le fichier : %s."
+
+#. module: web_diagram_builder
+#: code:addons/web_diagram_builder/models/web_diagram_builder_import.py:0
+msgid "Invalid filter_domain: must be a valid Odoo domain list."
+msgstr "filter_domain invalide : doit être une liste de domaine Odoo valide."
+
+#. module: web_diagram_builder
+#: code:addons/web_diagram_builder/models/web_diagram_builder_import.py:0
+#, python-format
+msgid "Model '%s' not found in this database."
+msgstr "Le modèle « %s » est introuvable dans cette base de données."
+
+#. module: web_diagram_builder
+#: code:addons/web_diagram_builder/models/web_diagram_builder_import.py:0
+#, python-format
+msgid "Field '%s' not found on model '%s'."
+msgstr "Le champ « %s » est introuvable sur le modèle « %s »."
+
+#. module: web_diagram_builder
+#: code:addons/web_diagram_builder/models/web_diagram_builder_import.py:0
+msgid "Please upload at least one CSV file."
+msgstr "Veuillez charger au moins un fichier CSV."
+
+#. module: web_diagram_builder
+#: code:addons/web_diagram_builder/models/web_diagram_builder_import.py:0
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Erreur inattendue : %s"
+
+#. module: web_diagram_builder
+#: code:addons/web_diagram_builder/models/web_diagram_builder.py:0
+#, python-format
+msgid "Diagram computed"
+msgstr "Diagramme calculé"
+
+#. module: web_diagram_builder
+#: model_terms:ir.ui.view,arch_db:web_diagram_builder.view_web_diagram_builder_template_form
+msgid "Describe what this diagram represents…"
+msgstr "Décrivez ce que représente ce diagramme…"
+
+#. module: web_diagram_builder
+#: model:web.diagram.builder.template,description:web_diagram_builder.template_res_partner
+msgid "Show the parent/child hierarchy of partners using the parent_id field."
+msgstr "Affiche la hiérarchie parent/enfant des partenaires via le champ parent_id."
